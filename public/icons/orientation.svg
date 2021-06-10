@@ -1,0 +1,8 @@
+<svg className='w-6 h-6' width='267' height='235' viewBox='0 0 267 235' fill='none' xmlns='http://www.w3.org/2000/svg'
+    stroke-miterlimit='11.4737' stroke-linecap='round' stroke-linejoin='round'>
+    <path d='M84 98L137 147' stroke='#DE3F3F' stroke-width='20' stroke-linecap='round' stroke-linejoin='round' />
+    <path d='M138 147H212' stroke='#57B894' stroke-width='20' stroke-linecap='round' stroke-linejoin='round' />
+    <path d='M137.5 147C136.372 148.884 104.697 201.785 89 228' stroke='#3C8AD1' stroke-width='20'
+        stroke-linecap='round' stroke-linejoin='round' />
+    <path d='M265 231H2L133.5 2L265 231Z' fill='transparent' stroke='white' stroke-width='20' />
+</svg>

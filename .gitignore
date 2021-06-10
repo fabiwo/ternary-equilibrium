@@ -1,0 +1,13 @@
+# Logs
+logs
+*.log
+yarn-error.log*
+yarn.lock
+.cache
+# Dependency directories
+node_modules/
+# dotenv environment variables file
+.env
+.env.test
+dist
+.vscode

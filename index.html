@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ffabiwo" />
+    <meta name="twitter:creator" content="@ffabiwo" />
+    <meta property="og:locale" content="en_IE" />
+    <meta property="og:site_name" content="Fabian Wolff" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta
+      name="description"
+      content="An easy-to-use and easy-to-access resource to create ternary graphs for chemical engineers"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ternary Equilibrium" />
+    <meta
+      property="og:description"
+      content="An easy-to-use and easy-to-access resource to create ternary graphs for chemical engineers"
+    />
+    <meta property="og:image" content="/thumbnail.png" />
+    <meta property="og:image:alt" content="Ternary Equilibrium" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="https://www.ternary-equilibrium.com/" />
+    <link rel="canonical" href="https://www.ternary-equilibrium.com/" />
+    <title>Ternary Equilibrium</title>
+    <script
+      async
+      defer
+      data-domain="ternary-equilibrium.com"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
+  <body>
+    <div class="flex flex-col h-screen md:flex-row">
+      <div class="flex flex-col md:flex-row">
+        <ul class="flex bg-outer-space-400">
+          <div
+            class="flex items-center w-full px-3 md:flex-col md:px-0 md:py-3"
+          >
+            <img
+              class="w-12 h-12 mr-3 md:mb-3 md:mr-0"
+              src="/favicon.svg"
+              alt="logo"
+            />
+            <a target="#data" class="default-open tab__link">
+              <svg
+                class="fill-current h-7 w-7"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.42 2.66h2.14l-2.38-3.87 2.34-3.8H7.46l-1.3 2.4-.05.08-.04.09-.64-1.28-.66-1.29H2.59l2.27 3.82-2.48 3.85h2.16zM14.25 21v-3H7.5v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3H7.5v3zm8.25 15v-3h-6.75v3zm0-4.5v-3.75h-6.75v3.75zm0-5.25V7.5h-6.75v3.75zm0-5.25V3h-6.75v3z"
+                ></path>
+              </svg>
+            </a>
+            <a target="#Composition" class="tab__link">
+              <svg
+                class="fill-current h-7 w-7"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M11 2.05v3.02a7 7 0 1 0 5.192 12.536l2.137 2.137A9.966 9.966 0 0 1 12 22C6.477 22 2 17.523 2 12c0-5.185 3.947-9.449 9-9.95zM21.95 13a9.948 9.948 0 0 1-2.207 5.328l-2.137-2.136A6.958 6.958 0 0 0 18.929 13h3.022zM13.002 2.05a10.004 10.004 0 0 1 8.95 8.95H18.93a7.005 7.005 0 0 0-5.928-5.929V2.049z"
+                ></path>
+              </svg>
+            </a>
+            <a target="#style" class="tab__link">
+              <svg
+                class="stroke-current h-7 w-7"
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"
+                ></path>
+              </svg>
+            </a>
+            <a target="#traces" class="relative tab__link">
+              <svg
+                class="stroke-current h-7 w-7"
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 24 24"
+                fill="transparent"
+                stroke="#fff"
+              >
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg
+              ><span
+                id="trace-counter"
+                class="absolute z-50 px-2 py-1 text-white bg-blue-500 rounded md:-right-5 -bottom-10 md:bottom-4"
+                >0</span
+              >
+            </a>
+          </div>
+          <!-- <a
+            class="text-gray-600 cursor-pointer"
+            data-micromodal-trigger="impressum"
+          >
+            §
+          </a> -->
+        </ul>
+        <div class="md:w-120">
+          <div id="data" class="tab__content">
+            <div class="flex flex-col h-full">
+              <h2 class="mb-4 text-3xl font-bold">Data</h2>
+              <div class="flex flex-col justify-between flex-grow space-y-5">
+                <div class="input__row">
+                  <label for="exampleData" class="input__label"
+                    >Example Datasets</label
+                  >
+                  <select class="text" id="exampleData">
+                    <option selected="">Select</option>
+                    <option value="1">
+                      Water - Acetic Acid - Butyl Acetate
+                    </option>
+                    <option value="2">
+                      Water - Acetic Acid - Ethyl Acetate
+                    </option>
+                    <option value="3">
+                      Water - Acetic Acid - Heptyl Acetate
+                    </option>
+                  </select>
+                </div>
+                <div class="flex flex-grow mb-4">
+                  <div
+                    id="spreadsheet"
+                    tabindex="1"
+                    class="flex flex-col flex-grow"
+                  ></div>
+                </div>
+                <div class="h-48 mb-2">
+                  <form
+                    id="drag-drop"
+                    enctype="multipart/form-data"
+                    novalidate=""
+                    class="relative flex items-center justify-center h-full text-xl rounded cursor-pointer bg-outer-space-400 box dragdrop"
+                  >
+                    <div
+                      class="flex flex-col items-center justify-center space-y-3"
+                    >
+                      <svg
+                        class="w-12 h-12 fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="50"
+                        height="43"
+                        viewBox="0 0 50 43"
+                      >
+                        <path
+                          d="M48.4 26.5c-.9 0-1.7.7-1.7 1.7v11.6h-43.3v-11.6c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v13.2c0 .9.7 1.7 1.7 1.7h46.7c.9 0 1.7-.7 1.7-1.7v-13.2c0-1-.7-1.7-1.7-1.7zm-24.5 6.1c.3.3.8.5 1.2.5.4 0 .9-.2 1.2-.5l10-11.6c.7-.7.7-1.7 0-2.4s-1.7-.7-2.4 0l-7.1 8.3v-25.3c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v25.3l-7.1-8.3c-.7-.7-1.7-.7-2.4 0s-.7 1.7 0 2.4l10 11.6z"
+                        ></path>
+                      </svg>
+                      <input
+                        type="file"
+                        name="files[]"
+                        id="file"
+                        class="hidden box__file"
+                        data-multiple-caption="{count} files selected"
+                        multiple=""
+                      />
+                      <label
+                        ><strong class="dragdrop__hover">Choose a file</strong
+                        ><span class="box__dragndrop">
+                          or <strong class="dragdrop__hover">drag</strong> it
+                          here</span
+                        >.</label
+                      >
+                    </div>
+                  </form>
+                </div>
+                <button
+                  id="add-trace-btn"
+                  type="button"
+                  class="w-full h-12 font-medium bg-green-500 rounded"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="Composition" class="tab__content">
+            <div class="flex flex-col h-full">
+              <h2 class="mb-4 text-3xl font-bold">Composition</h2>
+              <div class="flex justify-center h-full">
+                <div id="donut"></div>
+              </div>
+            </div>
+          </div>
+          <div id="style" class="tab__content">
+            <div class="flex flex-col h-full">
+              <h2 class="mb-4 text-3xl font-bold">Styling</h2>
+              <div class="space-y-4 overflow-auto">
+                <div class="section__wrapper">
+                  <div class="section__header">
+                    <img src="/icons/globe.svg" alt="" />
+                    Global
+                  </div>
+                  <div class="section__content">
+                    <div class="input__row">
+                      <label for="style-presets" class="input__label"
+                        >Theme</label
+                      >
+                      <div class="input__element">
+                        <select id="style-presets" class="dropdown">
+                          <option value="./data/plot-styles/Light.json">
+                            Light
+                          </option>
+                          <option value="./data/plot-styles/nLight.json">
+                            Light No Grid
+                          </option>
+                          <option value="./data/plot-styles/Dark.json">
+                            Dark
+                          </option>
+                          <option value="./data/plot-styles/nDark.json">
+                            Dark No Grid
+                          </option>
+                          <option value="./data/plot-styles/ggplot.json">
+                            Ggplot
+                          </option>
+                          <option value="./data/plot-styles/seaborn.json">
+                            Seaborn
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label for="font-select" class="input__label">Font</label>
+                      <div class="input__element">
+                        <select id="font-select" class="dropdown">
+                          <option value="Arial">Arial</option>
+                          <option value="Calibri">Calibri</option>
+                          <option value="Computer Modern">LaTeX</option>
+                          <option value="Times New Roman">
+                            Times New Roman
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label for="svg-color-select" class="input__label"
+                        >Background</label
+                      >
+                      <div class="input__element">
+                        <div class="colorpicker">
+                          <label style="background-color: rgb(255, 255, 255)">
+                            <input
+                              class="inline-form-color"
+                              type="color"
+                              id="svg-color-select"
+                              name="svg-color-select"
+                              value="#000000"
+                            />
+                          </label>
+                          <span
+                            for="svg-color-select"
+                            class="value"
+                            style="color: rgb(255, 255, 255)"
+                            >#ffffff</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label for="bg-color-select" class="input__label"
+                        >Triangle</label
+                      >
+                      <div class="input__element">
+                        <div class="colorpicker">
+                          <label style="background-color: rgb(255, 255, 255)">
+                            <input
+                              class="inline-form-color"
+                              type="color"
+                              id="bg-color-select"
+                              name="bg-color-select"
+                              value="#f1f1f1"
+                            />
+                          </label>
+                          <span class="value" style="color: rgb(255, 255, 255)"
+                            >#ffffff</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__wrapper">
+                  <div class="section__header">
+                    <img src="/icons/grid.png" alt="" />
+                    Grid
+                  </div>
+                  <div class="section__content">
+                    <div class="input__row">
+                      <label for="grid-color-select" class="input__label"
+                        >Color</label
+                      >
+                      <div class="input__element">
+                        <div class="colorpicker">
+                          <label style="background-color: rgb(0, 0, 0)">
+                            <input
+                              type="color"
+                              id="grid-color-select"
+                              name="grid-color-select"
+                              value="#000000"
+                            />
+                          </label>
+                          <span class="value" style="color: rgb(0, 0, 0)"
+                            >#000000</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input__row opacity-slider-div">
+                      <label class="input__label" for="grid-opacity-slider"
+                        >Opacity</label
+                      >
+                      <div class="input__element">
+                        <div id="grid-opacity-slider" class="slider">
+                          <input
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.01"
+                            value="0.5"
+                          />
+                          <span class="slider__value">0.2</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input__row mgrid-thickness-slider-div">
+                      <label class="input__label" for="mgrid-thickness-slider"
+                        >Main Width</label
+                      >
+                      <div class="input__element">
+                        <div id="mgrid-thickness-slider" class="slider">
+                          <input
+                            type="range"
+                            min="0"
+                            max="4"
+                            step="0.01"
+                            value="2"
+                          />
+                          <span class="slider__value">1</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input__row sgrid-thickness-slider-div">
+                      <label class="input__label" for="sgrid-thickness-slider"
+                        >Secondary Width</label
+                      >
+                      <div class="input__element">
+                        <div id="sgrid-thickness-slider" class="slider">
+                          <input
+                            type="range"
+                            min="0"
+                            max="4"
+                            step="0.01"
+                            value="2"
+                          />
+                          <span class="slider__value">0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__wrapper">
+                  <div class="section__header">
+                    <img src="/icons/ticks.png" alt="" />
+                    Ticks
+                  </div>
+                  <div class="section__content">
+                    <div class="input__row">
+                      <label for="point-checkbox" class="input__label"
+                        >Enabled</label
+                      >
+                      <div class="input__element">
+                        <label class="switch">
+                          <input
+                            type="checkbox"
+                            id="ticks-checkbox"
+                            checked=""
+                          />
+                          <span class="round switch__slider"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label for="tick-color-select" class="input__label"
+                        >Color</label
+                      >
+                      <div class="input__element">
+                        <div class="colorpicker">
+                          <label style="background-color: rgb(0, 0, 0)">
+                            <input
+                              type="color"
+                              id="tick-color-select"
+                              name="tick-color-select"
+                              value="#000000"
+                            />
+                          </label>
+                          <span class="value" style="color: rgb(0, 0, 0)"
+                            >#000000</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input__row tick-font-size-slider-div">
+                      <label class="input__label" for="tick-font-size-slider"
+                        >Size</label
+                      >
+                      <div class="input__element">
+                        <div id="tick-font-size-slider" class="slider">
+                          <input
+                            type="range"
+                            min="5"
+                            max="25"
+                            step="1"
+                            value="20"
+                          />
+                          <span class="slider__value">15</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__wrapper">
+                  <div class="section__header">
+                    <img src="/icons/axes.png" alt="" />
+                    Axes
+                  </div>
+                  <div class="section__content">
+                    <div class="input__row">
+                      <label
+                        for="triangleBorder-color-select"
+                        class="input__label"
+                        >Color</label
+                      >
+                      <div class="input__element">
+                        <div class="colorpicker">
+                          <label style="background-color: rgb(0, 0, 0)">
+                            <input
+                              type="color"
+                              id="triangleBorder-color-select"
+                              name="triangleBorder-color-select"
+                              value="#000000"
+                            />
+                          </label>
+                          <span class="value" style="color: rgb(0, 0, 0)"
+                            >#000000</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="input__row triangle-border-thickness-slider-div"
+                    >
+                      <label
+                        class="input__label"
+                        for="triangle-border-thickness-slider"
+                        >Width</label
+                      >
+                      <div class="input__element">
+                        <div
+                          id="triangle-border-thickness-slider"
+                          class="slider"
+                        >
+                          <input
+                            type="range"
+                            min="0"
+                            max="5"
+                            step="0.1"
+                            value="1"
+                          />
+                          <span class="slider__value">1.1</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__wrapper">
+                  <div class="section__header">
+                    <img src="/icons/labels.png" alt="" />
+                    Labels
+                  </div>
+                  <div class="section__content">
+                    <div class="input__row">
+                      <label class="input__label" for="left-ax-text"
+                        >Left</label
+                      >
+                      <div class="input__element">
+                        <input
+                          class="text"
+                          type="text"
+                          id="left-ax-text"
+                          value="Carrier"
+                        />
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label class="input__label" for="bottom-ax-text"
+                        >Bottom</label
+                      >
+                      <div class="input__element">
+                        <input
+                          class="text"
+                          type="text"
+                          id="bottom-ax-text"
+                          value="Solvent"
+                        />
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label class="input__label" for="right-ax-text"
+                        >Right</label
+                      >
+                      <div class="input__element">
+                        <input
+                          class="text"
+                          type="text"
+                          id="right-ax-text"
+                          value="Target"
+                        />
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label for="labels-color-select" class="input__label"
+                        >Color</label
+                      >
+                      <div class="input__element">
+                        <div class="colorpicker">
+                          <label style="background-color: rgb(0, 0, 0)">
+                            <input
+                              type="color"
+                              id="labels-color-select"
+                              name="color-select"
+                              value="#000000"
+                            />
+                          </label>
+                          <span class="value" style="color: rgb(0, 0, 0)"
+                            >#000000</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label class="input__label" for="labels-font-size-slider"
+                        >Size</label
+                      >
+                      <div class="input__element">
+                        <div id="labels-font-size-slider" class="slider">
+                          <input
+                            type="range"
+                            min="5"
+                            max="30"
+                            step="1"
+                            value="25"
+                          />
+                          <span class="slider__value">25</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__wrapper">
+                  <div class="section__header">
+                    <img src="/icons/title.svg" alt="" />
+                    Title
+                  </div>
+                  <div class="section__content">
+                    <div class="input__row">
+                      <label class="input__label">Text</label>
+                      <div class="input__element">
+                        <input class="text" type="text" id="titleLabel" />
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label for="title-color-select" class="input__label"
+                        >Color</label
+                      >
+                      <div class="input__element">
+                        <div class="colorpicker">
+                          <label style="background-color: rgb(0, 0, 0)"
+                            ><input
+                              type="color"
+                              id="title-color-select"
+                              name="color-select"
+                              value="#000000"
+                          /></label>
+                          <span class="value" style="color: rgb(0, 0, 0)"
+                            >#000000</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input__row">
+                      <label class="input__label" for="font-size-slider"
+                        >Size</label
+                      >
+                      <div class="input__element">
+                        <div id="font-size-slider" class="slider">
+                          <input
+                            type="range"
+                            min="5"
+                            max="30"
+                            step="1"
+                            value="25"
+                          />
+                          <span class="slider__value">25</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__wrapper">
+                  <div class="section__header">
+                    <img src="/icons/legend.png" alt="" />
+                    Legend
+                  </div>
+                  <div class="section__content">
+                    <div class="input__row">
+                      <label for="point-checkbox" class="input__label"
+                        >Enabled</label
+                      >
+                      <div class="input__element">
+                        <label class="switch">
+                          <input
+                            type="checkbox"
+                            id="legend-checkbox"
+                            checked=""
+                          />
+                          <span class="round switch__slider"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="traces" class="tab__content">
+            <div class="flex flex-col h-full">
+              <h2 class="mb-4 text-3xl font-bold">Traces</h2>
+              <ul
+                id="trace-list"
+                class="w-full h-full p-5 space-y-5 overflow-y-scroll bg-outer-space-500"
+              ></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="relative flex-grow p-10 bg__image bg-outer-space-800">
+        <div class="w-full h-full" id="ternary"></div>
+        <div class="absolute flex flex-col space-y-3 right-3 top-3">
+          <a
+            class="btn__circle btn__circle--blue"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://fabiwo.io/blog/ternary-equilibrium"
+            ><svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path
+                d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"
+              ></path></svg
+          ></a>
+          <p class="btn__circle" id="orientation__lines">
+            <svg
+              class="w-6 h-6"
+              width="267"
+              height="235"
+              viewBox="0 0 267 235"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-miterlimit="11.474"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M84 98l53 49" stroke="#DE3F3F" stroke-width="20"></path>
+              <path d="M138 147h74" stroke="#57B894" stroke-width="20"></path>
+              <path
+                d="M137.5 147L89 228"
+                stroke="#3C8AD1"
+                stroke-width="20"
+              ></path>
+              <path
+                d="M265 231H2L133.5 2 265 231z"
+                fill="transparent"
+                stroke="#fff"
+                stroke-width="20"
+              ></path>
+            </svg>
+          </p>
+          <p class="btn__circle" id="png-download">
+            <img class="w-6 h-6" src="/icons/filetypes/png-icon.svg" alt="" />
+          </p>
+          <p class="btn__circle" id="svg-download">
+            <img class="w-6 h-6" src="/icons/filetypes/svg-icon.svg" alt="" />
+          </p>
+          <p class="btn__circle" id="pdf-download">
+            <img class="w-6 h-6" src="/icons/filetypes/pdf-icon.svg" alt="" />
+          </p>
+          <p
+            class="btn__circle btn__circle--red"
+            data-micromodal-trigger="reset-modal"
+            id="reset__btn"
+          >
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="#fff"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M17 5V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V7h1a1 1 0 1 0 0-2h-3zm-2-1H9v1h6V4zm2 3H7v11a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7z"
+                clip-rule="evenodd"
+              ></path>
+              <path d="M9 9h2v8H9V9zm4 0h2v8h-2V9z"></path>
+            </svg>
+          </p>
+          <a
+            data-micromodal-trigger="how-to-modal"
+            id="how-to-modal-btn"
+            class="hidden"
+          >
+          </a>
+        </div>
+        <span class="absolute text-white right-3 bottom-3">Fabian Wolff</span>
+      </main>
+    </div>
+    <div class="micromodal-slide modal" id="how-to-modal" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+        >
+          <video
+            id="how-to-modal-content"
+            controls=""
+            autoplay=""
+            loop=""
+            playsinline=""
+          >
+            <source src="/videos/how-to-video.webm" type="video/webm" />
+            <source src="/videos/how-to-video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="micromodal-slide modal" id="reset-modal" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+        >
+          <div class="modal__wrapper" id="reset-modal_content">
+            <div class="modal__header">
+              <img
+                class="w-20 h-20 text-red-500"
+                src="/icons/alert-triangle.svg"
+                alt=""
+              />
+              <h1>Are you sure?</h1>
+            </div>
+            <div class="modal__body">
+              <br />
+              <p>
+                Do you really want to delete your <strong>Graph</strong> and
+                <strong>Trace Settings</strong> to <strong>Default</strong>?
+              </p>
+              <br />
+              <div class="flex space-x-5">
+                <button
+                  data-micromodal-close=""
+                  id="reset__cancel"
+                  class="h-12 font-medium bg-gray-400 rounded w-52"
+                >
+                  Cancel
+                </button>
+                <button
+                  data-micromodal-close=""
+                  id="reset__confirm"
+                  class="h-12 font-medium bg-red-500 rounded w-52"
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="micromodal-slide modal" id="impressum" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+        >
+          <div id="impressum-content" class="modal__wrapper">
+            <div class="modal__header">
+              <div class="flex w-full">
+                <h1>Legal Disclosure</h1>
+              </div>
+            </div>
+            <div class="modal__body">
+              <div class="flex flex-col w-full">
+                Information in accordance with Section 5 TMG
+                <br /><br />Luisenring<br />47<br />68159 Mannheim<br />
+                <h2>Contact Information</h2>
+                Telephone: 015757296358<br />E-Mail:
+                <a href="mailto:fabiandwolff@gmail.com"
+                  >fabiandwolff@gmail.com</a
+                ><br />Internet address:
+                <a href="https://www.ternary-equilibrium.com/" target="_blank"
+                  >https://www.ternary-equilibrium.com/</a
+                ><br /><br />
+                <h2>Disclaimer</h2>
+                Accountability for content<br />
+                The contents of our pages have been created with the utmost
+                care. However, we cannot guarantee the contents' accuracy,
+                completeness or topicality. According to statutory provisions,
+                we are furthermore responsible for our own content on these web
+                pages. In this matter, please note that we are not obliged to
+                monitor the transmitted or saved information of third parties,
+                or investigate circumstances pointing to illegal activity. Our
+                obligations to remove or block the use of information under
+                generally applicable laws remain unaffected by this as per §§ 8
+                to 10 of the Telemedia Act (TMG).
+                <br /><br />Accountability for links<br />
+                Responsibility for the content of external links (to web pages
+                of third parties) lies solely with the operators of the linked
+                pages. No violations were evident to us at the time of linking.
+                Should any legal infringement become known to us, we will remove
+                the respective link immediately.<br /><br />Copyright<br />
+                Our web pages and their contents are subject to German copyright
+                law. Unless expressly permitted by law, every form of utilizing,
+                reproducing or processing works subject to copyright protection
+                on our web pages requires the prior consent of the respective
+                owner of the rights. Individual reproductions of a work are only
+                allowed for private use. The materials from these pages are
+                copyrighted and any unauthorized use may violate copyright laws.
+
+                <br />
+                <br />
+                <h1>SheetJS Attribution</h1>
+
+                <p>
+                  Apache License Version 2.0, January 2004
+                  http://www.apache.org/licenses/ TERMS AND CONDITIONS FOR USE,
+                  REPRODUCTION, AND DISTRIBUTION
+                </p>
+                <p>
+                  1. Definitions. "License" shall mean the terms and conditions
+                  for use, reproduction, and distribution as defined by Sections
+                  1 through 9 of this document. "Licensor" shall mean the
+                  copyright owner or entity authorized by the copyright owner
+                  that is granting the License. "Legal Entity" shall mean the
+                  union of the acting entity and all other entities that
+                  control, are controlled by, or are under common control with
+                  that entity. For the purposes of this definition, "control"
+                  means (i) the power, direct or indirect, to cause the
+                  direction or management of such entity, whether by contract or
+                  otherwise, or (ii) ownership of fifty percent (50%) or more of
+                  the outstanding shares, or (iii) beneficial ownership of such
+                  entity. "You" (or "Your") shall mean an individual or Legal
+                  Entity exercising permissions granted by this License.
+                  "Source" form shall mean the preferred form for making
+                  modifications, including but not limited to software source
+                  code, documentation source, and configuration files. "Object"
+                  form shall mean any form resulting from mechanical
+                  transformation or translation of a Source form, including but
+                  not limited to compiled object code, generated documentation,
+                  and conversions to other media types. "Work" shall mean the
+                  work of authorship, whether in Source or Object form, made
+                  available under the License, as indicated by a copyright
+                  notice that is included in or attached to the work (an example
+                  is provided in the Appendix below). "Derivative Works" shall
+                  mean any work, whether in Source or Object form, that is based
+                  on (or derived from) the Work and for which the editorial
+                  revisions, annotations, elaborations, or other modifications
+                  represent, as a whole, an original work of authorship. For the
+                  purposes of this License, Derivative Works shall not include
+                  works that remain separable from, or merely link (or bind by
+                  name) to the interfaces of, the Work and Derivative Works
+                  thereof. "Contribution" shall mean any work of authorship,
+                  including the original version of the Work and any
+                  modifications or additions to that Work or Derivative Works
+                  thereof, that is intentionally submitted to Licensor for
+                  inclusion in the Work by the copyright owner or by an
+                  individual or Legal Entity authorized to submit on behalf of
+                  the copyright owner. For the purposes of this definition,
+                  "submitted" means any form of electronic, verbal, or written
+                  communication sent to the Licensor or its representatives,
+                  including but not limited to communication on electronic
+                  mailing lists, source code control systems, and issue tracking
+                  systems that are managed by, or on behalf of, the Licensor for
+                  the purpose of discussing and improving the Work, but
+                  excluding communication that is conspicuously marked or
+                  otherwise designated in writing by the copyright owner as "Not
+                  a Contribution." "Contributor" shall mean Licensor and any
+                  individual or Legal Entity on behalf of whom a Contribution
+                  has been received by Licensor and subsequently incorporated
+                  within the Work.
+                </p>
+                <p>
+                  2. Grant of Copyright License. Subject to the terms and
+                  conditions of this License, each Contributor hereby grants to
+                  You a perpetual, worldwide, non-exclusive, no-charge,
+                  royalty-free, irrevocable copyright license to reproduce,
+                  prepare Derivative Works of, publicly display, publicly
+                  perform, sublicense, and distribute the Work and such
+                  Derivative Works in Source or Object form.
+                </p>
+                <p>
+                  3. Grant of Patent License. Subject to the terms and
+                  conditions of this License, each Contributor hereby grants to
+                  You a perpetual, worldwide, non-exclusive, no-charge,
+                  royalty-free, irrevocable (except as stated in this section)
+                  patent license to make, have made, use, offer to sell, sell,
+                  import, and otherwise transfer the Work, where such license
+                  applies only to those patent claims licensable by such
+                  Contributor that are necessarily infringed by their
+                  Contribution(s) alone or by combination of their
+                  Contribution(s) with the Work to which such Contribution(s)
+                  was submitted. If You institute patent litigation against any
+                  entity (including a cross-claim or counterclaim in a lawsuit)
+                  alleging that the Work or a Contribution incorporated within
+                  the Work constitutes direct or contributory patent
+                  infringement, then any patent licenses granted to You under
+                  this License for that Work shall terminate as of the date such
+                  litigation is filed.
+                </p>
+                <p>
+                  4. Redistribution. You may reproduce and distribute copies of
+                  the Work or Derivative Works thereof in any medium, with or
+                  without modifications, and in Source or Object form, provided
+                  that You meet the following conditions: (a) You must give any
+                  other recipients of the Work or Derivative Works a copy of
+                  this License; and (b) You must cause any modified files to
+                  carry prominent notices stating that You changed the files;
+                  and (c) You must retain, in the Source form of any Derivative
+                  Works that You distribute, all copyright, patent, trademark,
+                  and attribution notices from the Source form of the Work,
+                  excluding those notices that do not pertain to any part of the
+                  Derivative Works; and (d) If the Work includes a "NOTICE" text
+                  file as part of its distribution, then any Derivative Works
+                  that You distribute must include a readable copy of the
+                  attribution notices contained within such NOTICE file,
+                  excluding those notices that do not pertain to any part of the
+                  Derivative Works, in at least one of the following places:
+                  within a NOTICE text file distributed as part of the
+                  Derivative Works; within the Source form or documentation, if
+                  provided along with the Derivative Works; or, within a display
+                  generated by the Derivative Works, if and wherever such
+                  third-party notices normally appear. The contents of the
+                  NOTICE file are for informational purposes only and do not
+                  modify the License. You may add Your own attribution notices
+                  within Derivative Works that You distribute, alongside or as
+                  an addendum to the NOTICE text from the Work, provided that
+                  such additional attribution notices cannot be construed as
+                  modifying the License. You may add Your own copyright
+                  statement to Your modifications and may provide additional or
+                  different license terms and conditions for use, reproduction,
+                  or distribution of Your modifications, or for any such
+                  Derivative Works as a whole, provided Your use, reproduction,
+                  and distribution of the Work otherwise complies with the
+                  conditions stated in this License.
+                </p>
+                <p>
+                  5. Submission of Contributions. Unless You explicitly state
+                  otherwise, any Contribution intentionally submitted for
+                  inclusion in the Work by You to the Licensor shall be under
+                  the terms and conditions of this License, without any
+                  additional terms or conditions. Notwithstanding the above,
+                  nothing herein shall supersede or modify the terms of any
+                  separate license agreement you may have executed with Licensor
+                  regarding such Contributions.
+                </p>
+                <p>
+                  6. Trademarks. This License does not grant permission to use
+                  the trade names, trademarks, service marks, or product names
+                  of the Licensor, except as required for reasonable and
+                  customary use in describing the origin of the Work and
+                  reproducing the content of the NOTICE file.
+                </p>
+                <p>
+                  7. Disclaimer of Warranty. Unless required by applicable law
+                  or agreed to in writing, Licensor provides the Work (and each
+                  Contributor provides its Contributions) on an "AS IS" BASIS,
+                  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+                  or implied, including, without limitation, any warranties or
+                  conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or
+                  FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible
+                  for determining the appropriateness of using or redistributing
+                  the Work and assume any risks associated with Your exercise of
+                  permissions under this License.
+                </p>
+                <p>
+                  8. Limitation of Liability. In no event and under no legal
+                  theory, whether in tort (including negligence), contract, or
+                  otherwise, unless required by applicable law (such as
+                  deliberate and grossly negligent acts) or agreed to in
+                  writing, shall any Contributor be liable to You for damages,
+                  including any direct, indirect, special, incidental, or
+                  consequential damages of any character arising as a result of
+                  this License or out of the use or inability to use the Work
+                  (including but not limited to damages for loss of goodwill,
+                  work stoppage, computer failure or malfunction, or any and all
+                  other commercial damages or losses), even if such Contributor
+                  has been advised of the possibility of such damages.
+                </p>
+                <p>
+                  9. Accepting Warranty or Additional Liability. While
+                  redistributing the Work or Derivative Works thereof, You may
+                  choose to offer, and charge a fee for, acceptance of support,
+                  warranty, indemnity, or other liability obligations and/or
+                  rights consistent with this License. However, in accepting
+                  such obligations, You may act only on Your own behalf and on
+                  Your sole responsibility, not on behalf of any other
+                  Contributor, and only if You agree to indemnify, defend, and
+                  hold each Contributor harmless for any liability incurred by,
+                  or claims asserted against, such Contributor by reason of your
+                  accepting any such warranty or additional liability.
+                </p>
+                <p>END OF TERMS AND CONDITIONS</p>
+                <p>APPENDIX: How to apply the Apache License to your work.</p>
+                <p>
+                  To apply the Apache License to your work, attach the following
+                  boilerplate notice, with the fields enclosed by brackets "{}"
+                  replaced with your own identifying information. (Don't include
+                  the brackets!) The text should be enclosed in the appropriate
+                  comment syntax for the file format. We also recommend that a
+                  file or class name and description of purpose be included on
+                  the same "printed page" as the copyright notice for easier
+                  identification within third-party archives.
+                </p>
+                <p>Copyright (C) 2012-present SheetJS LLC</p>
+                <p>
+                  Licensed under the Apache License, Version 2.0 (the
+                  "License"); you may not use this file except in compliance
+                  with the License. You may obtain a copy of the License at
+                </p>
+                <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+                <p>
+                  Unless required by applicable law or agreed to in writing,
+                  software distributed under the License is distributed on an
+                  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+                  either express or implied. See the License for the specific
+                  language governing permissions and limitations under the
+                  License.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="micromodal-slide modal" id="support" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+        >
+          <div class="modal__wrapper" id="support-modal_content">
+            <div class="modal__header"></div>
+            <div class="modal__body">
+              <h1 class="text-4xl">🎉</h1>
+              <h1 class="text-2xl text-center">
+                Thanks for using <br />ternary-equilibrium.com!
+              </h1>
+              <p>
+                Feel free to reach out to me on
+                <a
+                  href="https://twitter.com/ffabiwo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline text-blue-400"
+                  >Twitter</a
+                >
+                with any feedback.
+              </p>
+              <p>
+                If you found this product helpful, consider supporting me with a
+                cup of coffee!
+              </p>
+              <a
+                href="https://www.buymeacoffee.com/fabiwo"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=fabiwo&button_colour=5F7FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>

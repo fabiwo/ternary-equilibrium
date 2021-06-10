@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter";
+  src: url(/fonts/inter-var-latin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern";
+  src: url(/fonts/Computer-Modern-Serif-Roman.eot);
+  src: url(/fonts/Computer-Modern-Serif-Roman.eot?#iefix) format("embedded-opentype"),
+    url(/fonts/Computer-Modern-Serif-Roman.woff) format("woff"),
+    url(/fonts/Computer-Modern-Serif-Roman.ttf) format("truetype");
+  font-weight: normal;  
+  font-style: normal;
+}
+
+body {
+  font-family: Inter;
+}
+// Tabs
+.tab__link {
+  @apply flex-grow md:flex-grow-0 relative flex items-center justify-center h-16 px-3 text-gray-600 transition duration-100 border-b-4 md:border-l-4 md:border-b-0 border-transparent  cursor-pointer hover:text-white;
+  &.active {
+    @apply text-white border-blue-500;
+  }
+}
+
+.tab__content {
+  @apply hidden w-full h-full px-4 py-3 text-white transition duration-200 bg-outer-space-500;
+  &.active {
+    @apply block;
+  }
+}
+
+// File Input
+.dragdrop {
+  outline: 2px dashed #3d3d3d;
+  outline-offset: -10px;
+  -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+  transition: outline-offset .15s ease-in-out, background-color .15s linear;
+
+  &:hover {
+    .dragdrop__hover {
+      @apply text-blue-500
+    }
+}
+}
+.box.dragdrop__dragover {
+  outline-offset: -15px;
+  outline-color: #818181;
+  background-color: #4b4b4b;
+}
+
+// Styling
+.section__wrapper {
+  @apply rounded;
+}
+
+.section__header {
+  @apply flex items-center bg-outer-space-200 text-white text-xl p-2 rounded-t;
+
+  img {
+    @apply h-6 w-6 mr-2;
+  }
+}
+
+.section__content {
+  @apply p-5 bg-outer-space-50 text-white rounded-b space-y-2;
+}
+
+// Inputs Layout
+.input__row {
+  @apply flex items-center content-center justify-between text-sm;
+}
+
+.input__label {
+  @apply text-opacity-80 text-gray-50 font-medium;
+}
+
+.input__element {
+  @apply w-64;
+}
+
+// Colorpicker
+.colorpicker {
+  @apply flex space-x-3 items-center h-full w-full justify-between;
+
+  label {
+    @apply h-9 w-9 rounded mb-0;
+  }
+
+  input[type="color"] {
+    visibility: hidden;
+  }
+
+  .value {
+    @apply w-full px-3 py-2 rounded bg-outer-space-400 text-right;
+  }
+}
+
+// Slider
+.slider {
+  @apply flex items-center space-x-3;
+
+  input {
+    @apply flex-grow;
+  }
+  .slider__value {
+    @apply px-3 py-2 w-14 flex justify-center rounded bg-outer-space-400 text-right;
+  }
+}
+
+// Text Input
+.text {
+  @apply bg-outer-space-300 text-white px-3 py-2 border-none w-full;
+
+  &:focus {
+    @apply bg-outer-space-200 text-white;
+  }
+}
+
+// Checkbox
+.switch {
+  @apply relative inline-block w-14 h-8;
+
+  input {
+    @apply hidden;
+
+    &:checked+.switch__slider {
+      @apply bg-green-500;
+
+      &:before {
+        transform: translateX(23px);
+      }
+    }
+  }
+
+  .switch__slider {
+    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-red-500 transition;
+
+    &:before {
+      @apply absolute h-6 w-6 left-1 bottom-1 bg-white transition;
+      content: "";
+    }
+
+    &.round {
+      @apply rounded-full;
+      &:before {
+        @apply rounded-full;
+      }
+    }
+  }
+}
+
+// Dropdown
+.dropdown {
+  @apply px-3 py-2 bg-outer-space-300 text-white border-none text-base;
+
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  background: #2C2C2C url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
+  appearance: none;
+
+  &:focus {
+    @apply bg-outer-space-400 border-none;
+  }
+}
+// Main
+.bg__image {
+  background-image: url(/icons/topography.svg);
+}
+// Circle Btn Drawer
+
+.btn__circle {
+  @apply shadow-lg transform transition ease-in-out flex justify-center p-2.5 rounded-full cursor-pointer bg-outer-space-200;
+
+  &.active {
+    @apply bg-gray-500;
+  }
+
+  &--blue {
+    @apply bg-blue-500;
+  }
+  &--red {
+    @apply bg-red-500;
+  }
+}
+
+// Video
+#how-to-modal-content {
+  @apply rounded-md;
+}
+
+// Modal 
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+// Custom Style
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3 !important;
+}
+
+.modal__container {
+  max-height: 90vh;
+  max-width: 90vh;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.modal__wrapper {
+  @apply flex flex-col bg-outer-space-300 text-white p-8 rounded-md;
+}
+
+.modal__header {
+@apply flex flex-col items-center justify-center text-3xl;
+}
+.modal__body {
+@apply flex flex-col justify-center items-center max-w-md space-y-5;
+}
+
+// Spreadsheet
+#spreadsheet {
+  @apply flex-grow flex flex-col;
+}
+
+// Rest
+#TriangleBackground,
+#GridGroup,
+#TraceGroup,
+#AxesGroup,
+.guideLine {
+  cursor: pointer;
+}
+
+// Traces
+.trace {
+  .trace__hwrapper{
+    @apply flex items-center justify-between relative overflow-hidden px-4 py-2 cursor-pointer transition rounded-t-md bg-outer-space-200;
+
+  }
+    
+  .trace__bwrapper{
+    @apply overflow-hidden h-0 rounded-b-md;
+
+  .trace__body {
+    @apply flex flex-col w-full;
+
+    .trace__tabs {
+      @apply flex h-16 bg-outer-space-100;
+
+      .menu-item {
+        @apply flex items-center justify-center w-full;
+      }
+
+      .active {
+        @apply bg-outer-space-500;
+      }
+    }
+  }
+
+  .trace__tabcontent {
+    @apply bg-outer-space-50 px-6 py-2 text-white font-medium;
+
+    .trace__content {
+      @apply flex flex-col h-full space-y-2;
+    }
+  }
+  }
+
+  &.is-active{
+    .trace__hwrapper {
+      @apply bg-blue-600 transition;
+    }
+  
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+#trace-counter {
+  z-index: 100000;
+}

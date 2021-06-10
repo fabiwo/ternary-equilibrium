@@ -1,0 +1,29 @@
+<svg class="tab-icon" width="271" height="236" viewBox="0 0 271 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M265 231H2L133.5 2L265 231Z" stroke="white" stroke-width="10" stroke-miterlimit="11.4737"
+        stroke-linecap="round" stroke-linejoin="round" />
+    <path stroke-width="3" stroke="white"
+        d="M1.5 231C21.8333 204.833 97.4925 140.019 144.5 137C199 133.5 223.833 203.5 267 231.5" />
+    <path stroke-width="3" stroke="white"
+        d="M1 230.676C21.3716 213.725 100.411 190.85 132.5 196C173 202.5 223.752 212.862 267 231" />
+    <g fill="white" stroke="white">
+        <circle cx="189" cy="152" r="9.875" stroke-width="2.25" />
+        <circle cx="71" cy="170" r="9.875" stroke-width="2.25" />
+        <path
+            d="M220.375 174C220.375 179.454 215.954 183.875 210.5 183.875C205.046 183.875 200.625 179.454 200.625 174C200.625 168.546 205.046 164.125 210.5 164.125C215.954 164.125 220.375 168.546 220.375 174Z"
+            stroke-width="2.25" />
+        <circle cx="98" cy="153" r="9.875" stroke-width="2.25" />
+        <circle cx="128" cy="139" r="9.875" stroke-width="2.25" />
+        <circle cx="160" cy="138" r="9.875" stroke-width="2.25" />
+        <circle cx="45" cy="187" r="9.875" stroke-width="2.25" />
+        <circle cx="229" cy="194" r="9.875" stroke-width="2.25" />
+        <path d="M25.7997 208.9L35.5 203.299L45.2003 208.9V220.1L35.5 225.701L25.7997 220.1V208.9Z"
+            stroke-width="2.25" />
+        <path d="M55.7997 197.9L65.5 192.299L75.2003 197.9V209.1L65.5 214.701L55.7997 209.1V197.9Z"
+            stroke-width="2.25" />
+        <path d="M84.7997 190.9L94.5 185.299L104.2 190.9V202.1L94.5 207.701L84.7997 202.1V190.9Z" stroke-width="2.25" />
+        <path d="M114.8 188.9L124.5 183.299L134.2 188.9V200.1L124.5 205.701L114.8 200.1V188.9Z" stroke-width="2.25" />
+        <path d="M144.8 192.9L154.5 187.299L164.2 192.9V204.1L154.5 209.701L144.8 204.1V192.9Z" stroke-width="2.25" />
+        <path d="M175.8 199.9L185.5 194.299L195.2 199.9V211.1L185.5 216.701L175.8 211.1V199.9Z" stroke-width="2.25" />
+        <path d="M208.8 208.9L218.5 203.299L228.2 208.9V220.1L218.5 225.701L208.8 220.1V208.9Z" stroke-width="2.25" />
+    </g>
+</svg>
